@@ -22,7 +22,7 @@ public class BackgroundScroller : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         height = collider.size.y;
-        //collider.enabled = false;
+        collider.enabled = false;
         posFinalY = pos1.transform.position.y;
 
         
