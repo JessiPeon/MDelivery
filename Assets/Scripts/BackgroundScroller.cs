@@ -8,24 +8,24 @@ public class BackgroundScroller : MonoBehaviour
     public BoxCollider2D collider;
     public Rigidbody2D rb;
     public bool handLeft;
-    public GameObject height_sprite;
+    public GameObject pos1;
+    public GameObject pos2;
 
     private float height;
-    private float scrollSpeedY = 2f;
+    private float scrollSpeedY = 2.05f;
     private float scrollSpeedX = 0.18f;
     private float posFinalY;
-    private float posFinalX;
 
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        height = collider.size.y;//height_sprite.transform.localScale.y;
-        posFinalY = transform.position.y + height; // no puedo depender de transform.position.y porque en los dos pedazos es dif
-        posFinalX = -transform.position.x;
-        
+        height = collider.size.y;
         collider.enabled = false;
+        posFinalY = pos1.transform.position.y;
+
+        
         if (!handLeft)
         {
             scrollSpeedX = -scrollSpeedX;
@@ -36,11 +36,15 @@ public class BackgroundScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y >= posFinalY)
+        if(!handLeft && transform.position.y >= posFinalY + height)
         {
-            Debug.Log("Hola");
-            Vector2 resetPosition = new Vector2(0, -posFinalY *2f);
-            transform.position = (Vector2)transform.position + resetPosition;
+            Vector2 resetPosition = new Vector2(pos2.transform.position.x - 0.05f, pos2.transform.position.y + 0.18f);
+            transform.position = resetPosition;
+        }
+        if (handLeft && transform.position.y >= posFinalY + height)
+        {
+            Vector2 resetPosition = new Vector2(pos2.transform.position.x + 0.07f, pos2.transform.position.y + 0.18f);
+            transform.position = resetPosition;
         }
     }
 }
