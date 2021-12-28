@@ -5,22 +5,17 @@ using UnityEngine;
 
 public class StreetScroller : MonoBehaviour
 {
-    public BoxCollider2D collider;
     public Rigidbody2D rb;
     public GameObject pos1;
     public GameObject pos2;
 
-    private float height;
     private float scrollSpeedY = 2f;
     private float posFinalY;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        height = collider.size.y;
-        collider.enabled = false;
         
         rb.velocity = new Vector2(0, scrollSpeedY);
 
