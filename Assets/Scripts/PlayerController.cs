@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PowerUp"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            other.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }

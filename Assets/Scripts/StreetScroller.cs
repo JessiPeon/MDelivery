@@ -36,8 +36,10 @@ public class StreetScroller : MonoBehaviour
 
     void resetPowerUp()
     {
-        if (transform.childCount > 0) { 
-             transform.GetChild(0).localPosition = new Vector3(UnityEngine.Random.Range(-3, 3), 0, 0);
+        if (transform.childCount > 0) {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+            transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
+            transform.GetChild(0).localPosition = new Vector3(UnityEngine.Random.Range(-3, 3), 0, 0);
         }
     }
 
