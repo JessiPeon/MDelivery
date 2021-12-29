@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PowerUp
   - House
+  - NR1
+  - NR2
+  - NL1
+  - NL2
   layers:
   - Default
   - TransparentFX

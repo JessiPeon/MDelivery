@@ -31,10 +31,6 @@ public class StreetScroller : MonoBehaviour
             Vector2 resetPosition = new Vector2(0, pos2.transform.position.y);
             transform.position =  resetPosition;
             resetPowerUp();
-            foreach (var house in GameObject.FindGameObjectsWithTag("House")) //corregir que aca saco todos 
-            {
-                house.GetComponent<SpriteRenderer>().enabled = false;
-            }
         }
     }
 

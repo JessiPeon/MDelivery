@@ -10,6 +10,7 @@ public class BackgroundScroller : MonoBehaviour
     public bool handLeft;
     public GameObject pos1;
     public GameObject pos2;
+    public String neighborhood;
 
     private float height;
     private float scrollSpeedY = 2.05f;
@@ -40,11 +41,25 @@ public class BackgroundScroller : MonoBehaviour
         {
             Vector2 resetPosition = new Vector2(pos2.transform.position.x - 0.05f, pos2.transform.position.y + 0.18f);
             transform.position = resetPosition;
+            cleanNeighborhood();
         }
         if (handLeft && transform.position.y >= posFinalY + height)
         {
             Vector2 resetPosition = new Vector2(pos2.transform.position.x + 0.07f, pos2.transform.position.y + 0.18f);
             transform.position = resetPosition;
+            cleanNeighborhood();
+        }
+
+        
+    }
+
+    void cleanNeighborhood() { 
+        foreach (var house in GameObject.FindGameObjectsWithTag("House"))  
+        {
+            if (neighborhood == house.GetComponent<HouseStatus>().neighborhood) //si es del mismo vecindario
+            {
+                house.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
     }
 }
