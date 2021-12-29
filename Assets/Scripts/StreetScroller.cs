@@ -6,6 +6,7 @@ using UnityEngine;
 public class StreetScroller : MonoBehaviour
 {
     public Rigidbody2D rb;
+    //public GameObject powerUp;
     public GameObject pos1;
     public GameObject pos2;
 
@@ -29,6 +30,18 @@ public class StreetScroller : MonoBehaviour
         {
             Vector2 resetPosition = new Vector2(0, pos2.transform.position.y);
             transform.position =  resetPosition;
+            resetPowerUp();
         }
     }
+
+    void resetPowerUp()
+    {
+        if (transform.childCount > 0) {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+            transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
+            transform.GetChild(0).localPosition = new Vector3(UnityEngine.Random.Range(-3, 3), 0, 0);
+        }
+    }
+
+    
 }
