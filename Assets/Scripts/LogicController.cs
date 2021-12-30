@@ -5,6 +5,8 @@ using UnityEngine;
 public class LogicController : MonoBehaviour
 {
     public static int countPowerUp = 0;
+    public static bool fail = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,9 @@ public class LogicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (fail)
+        {
+            MenuController.EndGame();
+        }
     }
 }

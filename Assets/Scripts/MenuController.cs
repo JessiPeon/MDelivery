@@ -11,7 +11,7 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void EndGame()
+    public static void EndGame()
     {
         SceneManager.LoadScene("Outro");
     }
