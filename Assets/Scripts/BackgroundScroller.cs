@@ -31,25 +31,31 @@ public class BackgroundScroller : MonoBehaviour
         {
             scrollSpeedX = -scrollSpeedX;
         }
-        rb.velocity = new Vector2(scrollSpeedX, scrollSpeedY);
+        rb.velocity = new Vector2(0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!handLeft && transform.position.y >= posFinalY + height)
+        if (LogicController.startedGame)
         {
-            Vector2 resetPosition = new Vector2(pos2.transform.position.x - 0.05f, pos2.transform.position.y + 0.18f);
-            transform.position = resetPosition;
-            cleanNeighborhood();
+            if (rb.velocity.y == 0)
+            {
+                rb.velocity = new Vector2(scrollSpeedX, scrollSpeedY);
+            }
+            if (!handLeft && transform.position.y >= posFinalY + height)
+            {
+                Vector2 resetPosition = new Vector2(pos2.transform.position.x - 0.05f, pos2.transform.position.y + 0.18f);
+                transform.position = resetPosition;
+                cleanNeighborhood();
+            }
+            if (handLeft && transform.position.y >= posFinalY + height)
+            {
+                Vector2 resetPosition = new Vector2(pos2.transform.position.x + 0.07f, pos2.transform.position.y + 0.18f);
+                transform.position = resetPosition;
+                cleanNeighborhood();
+            }
         }
-        if (handLeft && transform.position.y >= posFinalY + height)
-        {
-            Vector2 resetPosition = new Vector2(pos2.transform.position.x + 0.07f, pos2.transform.position.y + 0.18f);
-            transform.position = resetPosition;
-            cleanNeighborhood();
-        }
-
         
     }
 
