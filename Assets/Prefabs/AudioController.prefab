@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8043393162776587893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8043393162776587891}
+  - component: {fileID: 8043393162776587892}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8043393162776587891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043393162776587893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.116922, y: 898.32965, z: -6.2852182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8043393162776587892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043393162776587893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bf8096cdd6064429223a75fd5c4fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Intro
+    clip: {fileID: 8300000, guid: e6a37550d4577aa4eb696c0dda14d898, type: 3}
+    volume: 0.3
+    loop: 0
+    source: {fileID: 0}
+  - name: ValetParking
+    clip: {fileID: 8300000, guid: 43cb25f022c61f743925c6bfc40e3eb6, type: 3}
+    volume: 0.3
+    loop: 1
+    source: {fileID: 0}
+  - name: Instrumental
+    clip: {fileID: 8300000, guid: dbfb46184fcff2241ac29e94c039ab70, type: 3}
+    volume: 0.3
+    loop: 1
+    source: {fileID: 0}
+  - name: Outro
+    clip: {fileID: 8300000, guid: 8644046f4658d3848b926e05b7ade35c, type: 3}
+    volume: 0.3
+    loop: 0
+    source: {fileID: 0}
