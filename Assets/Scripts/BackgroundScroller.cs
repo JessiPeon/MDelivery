@@ -39,10 +39,8 @@ public class BackgroundScroller : MonoBehaviour
     {
         if (LogicController.startedGame)
         {
-            if (rb.velocity.y == 0)
-            {
-                rb.velocity = new Vector2(scrollSpeedX, scrollSpeedY);
-            }
+
+            rb.velocity = new Vector2(scrollSpeedX * LogicController.currentVelocity, scrollSpeedY * LogicController.currentVelocity);
             if (!handLeft && transform.position.y >= posFinalY + height)
             {
                 Vector2 resetPosition = new Vector2(pos2.transform.position.x - 0.05f, pos2.transform.position.y + 0.18f);
@@ -62,7 +60,7 @@ public class BackgroundScroller : MonoBehaviour
     void cleanNeighborhood() { 
         foreach (var house in GameObject.FindGameObjectsWithTag("House"))  
         {
-            if (neighborhood == house.GetComponent<HouseStatus>().neighborhood) //si es del mismo vecindario
+            if (neighborhood == house.GetComponent<HouseController>().neighborhood) //si es del mismo vecindario
             {
                 house.GetComponent<SpriteRenderer>().enabled = false;
             }

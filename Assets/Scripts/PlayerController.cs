@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         if (LogicController.startedGame)
         {
+            speedY = speedY * LogicController.currentVelocity;
             float moveDirectionY = Input.GetAxis("Vertical");
             float moveDirectionX = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(moveDirectionX * speedX, moveDirectionY * speedY);

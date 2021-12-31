@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoxController : MonoBehaviour
 {
 
-    public float speed = 6;
+    public float speed = 7;
     public float direction = 1;
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class BoxController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("House"))
         {
+            LogicController.countHouses++;
             other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
