@@ -38,7 +38,7 @@ public class StreetScroller : MonoBehaviour
                 transform.position = resetPosition;
                 resetPowerUp();
                 LogicController.AddLap();
-                if(LogicController.round == 3 && LogicController.laps == 1 && LogicController.level <= 6)
+                if(LogicController.isAddFinishLine())
                 {
                     Vector2 position = new Vector2(finishLine.transform.position.x, finishLine.transform.position.y);
                     Instantiate(finishLine, position, Quaternion.identity, gameObject.transform);
