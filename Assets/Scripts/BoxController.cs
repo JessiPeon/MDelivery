@@ -5,13 +5,13 @@ using UnityEngine;
 public class BoxController : MonoBehaviour
 {
 
-    public float speed = 6;
+    public float speed = 7;
     public float direction = 1;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * Vector2.right * speed * Time.deltaTime);
+        transform.Translate(direction * Vector2.right * speed * LogicController.currentVelocity * Time.deltaTime);
         Destroy(gameObject, 5);
     }
 
@@ -19,7 +19,12 @@ public class BoxController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("House"))
         {
-            other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+             if (!other.gameObject.GetComponent<HouseController>().done)
+            {
+                LogicController.countHouses++;
+                other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                other.gameObject.GetComponent<HouseController>().done = true;
+            }
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             speed = 0;

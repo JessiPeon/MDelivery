@@ -14,12 +14,15 @@ public class MenuController : MonoBehaviour
 
     public static void EndGame()
     {
+        
+        FindObjectOfType<AudioController>().Play("Outro");
         SceneManager.LoadScene("Outro");
     }
 
     public void Restart()
     {
-        //limpiar variables
+        LogicController.cleanVariables();
+        FindObjectOfType<AudioController>().RestartAudioController();
         SceneManager.LoadScene("Intro");
     }
 }

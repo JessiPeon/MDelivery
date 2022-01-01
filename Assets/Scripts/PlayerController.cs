@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float speedY = 3;
     public string lastDir = "right";
 
+    private float nextBox = 0.0f;
+
     public GameObject box;
     // Start is called before the first frame update
     void Awake()
@@ -25,20 +27,15 @@ public class PlayerController : MonoBehaviour
     {
         if (LogicController.startedGame)
         {
+            var speed_X = speedX * LogicController.currentVelocity;
+            var speed_Y = speedY * LogicController.currentVelocity;
             float moveDirectionY = Input.GetAxis("Vertical");
             float moveDirectionX = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(moveDirectionX * speedX, moveDirectionY * speedY);
+            rb.velocity = new Vector2(moveDirectionX * speed_X, moveDirectionY * speed_Y);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                var direction = 1;
-                if (lastDir == "left")
-                {
-                    direction = -1;
-                }
-                box.GetComponent<BoxController>().direction = direction;
-                Vector2 positionBox = new Vector2(transform.position.x, transform.position.y);
-                Instantiate(box, positionBox, Quaternion.identity);
+                ThrowBox();
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
@@ -49,6 +46,26 @@ public class PlayerController : MonoBehaviour
                 lastDir = "right";
             }
         }
+    }
+
+    private void ThrowBox()
+    {
+        if (Time.time > nextBox)
+        {
+            nextBox = Time.time + 0.5f;
+
+            var direction = 1;
+            if (lastDir == "left")
+            {
+                direction = -1;
+            }
+            box.GetComponent<BoxController>().direction = direction;
+            Vector2 positionBox = new Vector2(transform.position.x, transform.position.y);
+            Instantiate(box, positionBox, Quaternion.identity);
+
+        }
+       
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

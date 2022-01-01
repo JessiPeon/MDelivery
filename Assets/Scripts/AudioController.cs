@@ -21,14 +21,12 @@ public class AudioController : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        foreach(Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
+        LoadSounds();
+    }
 
-            s.source.volume = s.volume;
-            s.source.loop = s.loop;
-        }
+    public void RestartAudioController()
+    {
+        LoadSounds();
     }
 
     public void Play(string name)
@@ -81,6 +79,18 @@ public class AudioController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void LoadSounds()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
+            s.source.loop = s.loop;
+        }
     }
     //FindObjectOfType<AudioController>().Play("namesound");
 }

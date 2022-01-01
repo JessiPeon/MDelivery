@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HudBehavior : MonoBehaviour
 {
     public Text powerUpText;
+    public Text percentage;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +18,6 @@ public class HudBehavior : MonoBehaviour
     void Update()
     {
         powerUpText.text = "Dics: " + LogicController.countPowerUp;
+        percentage.text = LogicController.currentPercent + "% / " + LogicController.currentGoal + "%";
     }
 }

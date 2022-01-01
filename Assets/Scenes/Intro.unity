@@ -726,6 +726,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[0].tag
+      value: intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[1].tag
+      value: main
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[2].tag
+      value: main
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[3].tag
+      value: outro
+      objectReference: {fileID: 0}
     - target: {fileID: 8043393162776587893, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
       propertyPath: m_Name
       value: AudioController

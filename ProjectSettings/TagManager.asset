@@ -10,6 +10,7 @@ TagManager:
   - NR2
   - NL1
   - NL2
+  - LimitTop
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - UI
   - Box
   - HouseBox
-  - 
-  - 
+  - Goal
+  - Player
   - 
   - 
   - 
