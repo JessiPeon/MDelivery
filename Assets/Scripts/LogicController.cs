@@ -41,7 +41,7 @@ public class LogicController : MonoBehaviour
     void Awake()
     {
         fail = false;
-        StartCoroutine(StartGameInTime(time));
+        StartCoroutine(StartGameInTime(0.1f));
         
     }
 

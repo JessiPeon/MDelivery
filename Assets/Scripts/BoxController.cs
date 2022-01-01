@@ -19,10 +19,11 @@ public class BoxController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("House"))
         {
-            if (!other.gameObject.GetComponent<SpriteRenderer>().enabled)
+             if (!other.gameObject.GetComponent<HouseController>().done)
             {
                 LogicController.countHouses++;
                 other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                other.gameObject.GetComponent<HouseController>().done = true;
             }
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;

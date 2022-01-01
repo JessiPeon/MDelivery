@@ -63,6 +63,7 @@ public class BackgroundScroller : MonoBehaviour
             if (neighborhood == house.GetComponent<HouseController>().neighborhood) //si es del mismo vecindario
             {
                 house.GetComponent<SpriteRenderer>().enabled = false;
+                house.GetComponent<HouseController>().done = false;
             }
         }
     }

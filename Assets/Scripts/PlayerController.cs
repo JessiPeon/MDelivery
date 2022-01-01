@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float speedY = 3;
     public string lastDir = "right";
 
+    private float nextBox = 0.0f;
+
     public GameObject box;
     // Start is called before the first frame update
     void Awake()
@@ -33,14 +35,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                var direction = 1;
-                if (lastDir == "left")
-                {
-                    direction = -1;
-                }
-                box.GetComponent<BoxController>().direction = direction;
-                Vector2 positionBox = new Vector2(transform.position.x, transform.position.y);
-                Instantiate(box, positionBox, Quaternion.identity);
+                ThrowBox();
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
@@ -51,6 +46,26 @@ public class PlayerController : MonoBehaviour
                 lastDir = "right";
             }
         }
+    }
+
+    private void ThrowBox()
+    {
+        if (Time.time > nextBox)
+        {
+            nextBox = Time.time + 0.5f;
+
+            var direction = 1;
+            if (lastDir == "left")
+            {
+                direction = -1;
+            }
+            box.GetComponent<BoxController>().direction = direction;
+            Vector2 positionBox = new Vector2(transform.position.x, transform.position.y);
+            Instantiate(box, positionBox, Quaternion.identity);
+
+        }
+       
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
