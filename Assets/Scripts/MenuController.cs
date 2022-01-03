@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator transition;
+
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
         FindObjectOfType<AudioController>().Play("Intro");
+        StartCoroutine(LoadGameScene());
     }
 
     public static void EndGame()
@@ -24,5 +26,21 @@ public class MenuController : MonoBehaviour
         LogicController.cleanVariables();
         FindObjectOfType<AudioController>().RestartAudioController();
         SceneManager.LoadScene("Intro");
+    }
+
+    IEnumerator LoadGameScene()
+    {
+        transition.SetTrigger("end");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Game"); 
+    }
+
+    public void ShowInputs()
+    {
+        GameObject.Find("Inputs").GetComponent<Image>().enabled = !(GameObject.Find("Inputs").GetComponent<Image>().enabled);
+        if (GameObject.Find("Inputs").GetComponent<Image>().enabled)
+        {
+            FindObjectOfType<AudioController>().Play("Ring");
+        }
     }
 }

@@ -9,7 +9,7 @@ public class LogicController : MonoBehaviour
     public static int countHouses = 0;
     public static bool fail = false;
     public static bool startedGame = false;
-    private float time = 9.65f;
+    private float time = 8.17f;
     public static int totalHouses = 40;
     public static int laps = 1;
     public static int maxLaps = 7;
@@ -35,14 +35,14 @@ public class LogicController : MonoBehaviour
     public static float fifthVelocity = 2f;
     public static float lastVelocity = 3f;
     public static float currentVelocity = firstVelocity;
+    public Animator transition;
 
     public static int currentPercent = 0;
 
     void Awake()
     {
         fail = false;
-        StartCoroutine(StartGameInTime(0.1f));
-        
+        StartCoroutine(StartGameInTime(time));
     }
 
     // Update is called once per frame
