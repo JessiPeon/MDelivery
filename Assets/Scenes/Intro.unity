@@ -1073,6 +1073,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
       propertyPath: sounds.Array.data[0].tag
       value: intro
       objectReference: {fileID: 0}
@@ -1087,6 +1091,22 @@ PrefabInstance:
     - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
       propertyPath: sounds.Array.data[3].tag
       value: outro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[4].tag
+      value: ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dff74507b560bd64eab74e8196420651, type: 3}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[4].name
+      value: Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043393162776587892, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
+      propertyPath: sounds.Array.data[4].volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8043393162776587893, guid: 4928191009e3dfb458e5394d3066be9c, type: 3}
       propertyPath: m_Name

@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour
 {
     public Animator transition;
 
-    // Start is called before the first frame update
     public void StartGame()
     {
         FindObjectOfType<AudioController>().Play("Intro");
@@ -39,5 +38,9 @@ public class MenuController : MonoBehaviour
     public void ShowInputs()
     {
         GameObject.Find("Inputs").GetComponent<Image>().enabled = !(GameObject.Find("Inputs").GetComponent<Image>().enabled);
+        if (GameObject.Find("Inputs").GetComponent<Image>().enabled)
+        {
+            FindObjectOfType<AudioController>().Play("Ring");
+        }
     }
 }
