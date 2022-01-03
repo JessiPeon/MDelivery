@@ -1985,19 +1985,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.39605007
+      value: 0.5113006
       objectReference: {fileID: 0}
     - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.39604998
+      value: 0.5113005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0226011
       objectReference: {fileID: 0}
     - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.39
+      value: 1.5053
       objectReference: {fileID: 0}
     - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.46
+      value: -2.5753
       objectReference: {fileID: 0}
     - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2030,6 +2034,18 @@ PrefabInstance:
     - target: {fileID: 5689633453099806083, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689633453099806085, guid: 17e65147467765543a1aeade5173ff06, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689633453099806085, guid: 17e65147467765543a1aeade5173ff06, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689633453099806085, guid: 17e65147467765543a1aeade5173ff06, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5689633453099806085, guid: 17e65147467765543a1aeade5173ff06, type: 3}
       propertyPath: m_SortingOrder

@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
             if (lastDir == "left")
             {
                 direction = -1;
+                box.GetComponent<SpriteRenderer>().flipX = false;
+            } else
+            {
+                box.GetComponent<SpriteRenderer>().flipX = true;
             }
             box.GetComponent<BoxController>().direction = direction;
             Vector2 positionBox = new Vector2(transform.position.x, transform.position.y);
