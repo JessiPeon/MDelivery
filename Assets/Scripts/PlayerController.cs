@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speedX = 5;
     public float speedY = 3;
     public string lastDir = "right";
+    public Animator animator;
 
     private float nextBox = 0.0f;
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (LogicController.startedGame)
         {
+            animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
             var speed_X = speedX * LogicController.currentVelocity;
             var speed_Y = speedY * LogicController.currentVelocity;
             float moveDirectionY = Input.GetAxis("Vertical");
