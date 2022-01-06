@@ -22,6 +22,7 @@ public class BoxController : MonoBehaviour
              if (!other.gameObject.GetComponent<HouseController>().done)
             {
                 LogicController.countHouses++;
+                LogicController.countHousesByLevel++;
                 other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 other.gameObject.GetComponent<HouseController>().done = true;
             }

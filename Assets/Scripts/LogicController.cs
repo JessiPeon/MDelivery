@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class LogicController : MonoBehaviour
 {
+    public static int currentScore = 0;
     public static int countPowerUp = 0;
     public static int countHouses = 0;
+    public static int countHousesByLevel = 0;
     public static bool fail = false;
     public static bool startedGame = false;
     private float time = 8.17f;
@@ -50,6 +52,7 @@ public class LogicController : MonoBehaviour
     {
         if (startedGame)
         {
+            currentScore = countPowerUp * 25 + countHouses * 10;
             if (fail)
             {
                 FindObjectOfType<AudioController>().Mute("Instrumental");
@@ -57,7 +60,7 @@ public class LogicController : MonoBehaviour
                 startedGame = false;
                 MenuController.EndGame();
             }
-            var value = ((double)countHouses / totalHouses) * 100;
+            var value = ((double)countHousesByLevel / totalHouses) * 100;
             currentPercent = Convert.ToInt32(Math.Round(value, 0));
             if (currentPercent > 100)
             {
@@ -140,6 +143,8 @@ public class LogicController : MonoBehaviour
         {
             finalLevel = true;
         }
+        LogicController.currentPercent = 0;
+        LogicController.countHousesByLevel = 0;
         SetVelocity();
     }
 

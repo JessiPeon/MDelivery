@@ -7,6 +7,7 @@ public class HudBehavior : MonoBehaviour
 {
     public Text powerUpText;
     public Text percentage;
+    public Text score;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +20,6 @@ public class HudBehavior : MonoBehaviour
     {
         powerUpText.text = "Dics: " + LogicController.countPowerUp;
         percentage.text = LogicController.currentPercent + "% / " + LogicController.currentGoal + "%";
+        score.text = LogicController.currentScore.ToString();
     }
 }

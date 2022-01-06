@@ -9462,6 +9462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpText: {fileID: 677669394}
   percentage: {fileID: 2138382864}
+  score: {fileID: 434456390}
 --- !u!114 &2068316094
 MonoBehaviour:
   m_ObjectHideFlags: 0
