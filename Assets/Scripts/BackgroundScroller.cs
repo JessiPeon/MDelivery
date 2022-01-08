@@ -57,6 +57,7 @@ public class BackgroundScroller : MonoBehaviour
         
     }
 
+
     void cleanNeighborhood() { 
         foreach (var house in GameObject.FindGameObjectsWithTag("House"))  
         {

@@ -12,7 +12,14 @@ public class LogicController : MonoBehaviour
     public static bool fail = false;
     public static bool startedGame = false;
     private float time = 8.17f;
-    public static int totalHouses = 40;
+
+    public static int totalHouses = 24;
+    public static int totalHouses1 = 24;
+    public static int totalHouses2 = 39;
+    public static int totalHouses3 = 37;
+    public static int totalHouses4 = 40;
+    public static int totalHouses5 = 38;
+
     public static int laps = 1;
     public static int maxLaps = 7;
     public static int round = 1;
@@ -52,7 +59,7 @@ public class LogicController : MonoBehaviour
     {
         if (startedGame)
         {
-            currentScore = countPowerUp * 25 + countHouses * 10;
+            currentScore = countPowerUp * 250 + countHouses * 100;
             if (fail)
             {
                 FindObjectOfType<AudioController>().Mute("Instrumental");
@@ -146,6 +153,7 @@ public class LogicController : MonoBehaviour
         LogicController.currentPercent = 0;
         LogicController.countHousesByLevel = 0;
         SetVelocity();
+        SetTotalHouses();
     }
 
     private static void SetVelocity()
@@ -177,6 +185,42 @@ public class LogicController : MonoBehaviour
                         if (level == 6)
                         {
                         currentVelocity = lastVelocity;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private static void SetTotalHouses()
+    {
+        if (level == 2)
+        {
+            totalHouses = totalHouses2;
+        }
+        else
+        {
+            if (level == 3)
+            {
+                totalHouses = totalHouses3;
+            }
+            else
+            {
+                if (level == 4)
+                {
+                    totalHouses = totalHouses4;
+                }
+                else
+                {
+                    if (level == 5)
+                    {
+                        totalHouses = totalHouses5;
+                    }
+                    else
+                    {
+                        if (level == 6)
+                        {
+                            totalHouses = totalHouses5;
                         }
                     }
                 }

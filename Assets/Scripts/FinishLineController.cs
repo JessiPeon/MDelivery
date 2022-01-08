@@ -22,14 +22,14 @@ public class FinishLineController : MonoBehaviour
     {
         if (other.gameObject.name=="Player")
         {
-            LogicController.AddLevel();
-            /*if (LogicController.currentPercent >= LogicController.currentGoal)
+            //LogicController.AddLevel();
+            if (LogicController.currentPercent >= LogicController.currentGoal)
             {
                 LogicController.AddLevel();
             } else
             {
                 LogicController.fail = true;
-            }*/
+            }
             
         }
     }
