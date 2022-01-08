@@ -59,7 +59,7 @@ public class BackgroundScroller : MonoBehaviour
 
 
     void cleanNeighborhood() { 
-        foreach (var house in GameObject.FindGameObjectsWithTag("House"))  
+        foreach (var house in GameObject.FindGameObjectsWithTag("Carpet"))  
         {
             if (neighborhood == house.GetComponent<HouseController>().neighborhood) //si es del mismo vecindario
             {

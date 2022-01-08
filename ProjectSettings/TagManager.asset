@@ -12,6 +12,7 @@ TagManager:
   - NL2
   - LimitTop
   - ColliderBox
+  - Carpet
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Goal
   - Player
   - ColliderBox
-  - 
+  - Neighbordhood
   - 
   - 
   - 

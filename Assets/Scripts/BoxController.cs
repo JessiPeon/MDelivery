@@ -20,16 +20,20 @@ public class BoxController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("House"))
         {
-             if (!other.gameObject.GetComponent<HouseController>().done)
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            speed = 0;
+        }
+
+        if (other.gameObject.CompareTag("Carpet"))
+        {
+            if (!other.gameObject.GetComponent<HouseController>().done)
             {
                 LogicController.countHouses++;
                 LogicController.countHousesByLevel++;
                 other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 other.gameObject.GetComponent<HouseController>().done = true;
             }
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            speed = 0;
         }
 
         if (other.gameObject.CompareTag("ColliderBox"))
