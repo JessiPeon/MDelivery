@@ -35,7 +35,7 @@ public class LogicController : MonoBehaviour
     public static int fourthGoal = 70;
     public static int fifthtGoal = 100;
     public static int lastGoal = 100;
-    public static int currentGoal;
+    public static int currentGoal =50;
 
     public static float firstVelocity = 1f;
     public static float secondVelocity = 1.5f;
