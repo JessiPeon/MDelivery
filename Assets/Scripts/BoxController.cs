@@ -6,14 +6,14 @@ public class BoxController : MonoBehaviour
 {
 
     public float speed = 7;
-    public float direction = 1;
+    public float direction = -1;
     private float currentTime = 3f;
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(direction * Vector2.right * speed * LogicController.currentVelocity * Time.deltaTime);
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 4);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

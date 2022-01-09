@@ -11,7 +11,7 @@ public class LogicController : MonoBehaviour
     public static int countHousesByLevel = 0;
     public static bool fail = false;
     public static bool startedGame = false;
-    private float time = 8.17f;
+    private float time = 8.17f;//7.85f;
 
     public static int totalHouses = 24;
     public static int totalHouses1 = 24;
@@ -234,7 +234,21 @@ public class LogicController : MonoBehaviour
         {
             Destroy(s);
         }
-    }
+        currentVelocity = firstVelocity;
+        currentScore = 0;
+        countPowerUp = 0;
+        countHouses = 0;
+        currentPercent = 0;
+        countHousesByLevel = 0;
+        fail = false;
+        startedGame = false;
+        totalHouses = totalHouses1;
+        level = 1;
+        round = 1;
+        level = 1;
+        laps = 2;
+        currentGoal = firstGoal;
+}
 
     public static bool isAddFinishLine()
     {
