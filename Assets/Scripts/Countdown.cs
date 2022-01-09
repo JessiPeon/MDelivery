@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Countdown : MonoBehaviour
 {
     private float currentTime = 5f;
-    public Text countdown;
+    public TextMeshProUGUI countdown;
     void Start()
     {
         //currentTime += 1 * Time.deltaTime;
@@ -26,7 +27,7 @@ public class Countdown : MonoBehaviour
         currentTime -= 1 * Time.deltaTime;
         GameObject.Find("Countdown").GetComponent<Animator>().SetTrigger("start");
         var timeToShow = (float)Math.Round(currentTime,0);
-        GameObject.Find("Countdown").GetComponent<Text>().fontSize = 50;
+        GameObject.Find("Countdown").GetComponent<TextMeshProUGUI>().fontSize = 30;
         if (timeToShow <= 0)
         {
             countdown.text = "Go!";
@@ -37,7 +38,7 @@ public class Countdown : MonoBehaviour
         {
             if (timeToShow >= 4)
             {
-                GameObject.Find("Countdown").GetComponent<Text>().fontSize = 25;
+                GameObject.Find("Countdown").GetComponent<TextMeshProUGUI>().fontSize = 20;
                 countdown.text = "Ready?";
             } else
             {

@@ -7,6 +7,7 @@ public class BoxController : MonoBehaviour
 
     public float speed = 7;
     public float direction = 1;
+    private float currentTime = 3f;
 
     // Update is called once per frame
     void Update()
@@ -19,15 +20,25 @@ public class BoxController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("House"))
         {
-             if (!other.gameObject.GetComponent<HouseController>().done)
-            {
-                LogicController.countHouses++;
-                other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                other.gameObject.GetComponent<HouseController>().done = true;
-            }
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             speed = 0;
+        }
+
+        if (other.gameObject.CompareTag("Carpet"))
+        {
+            if (!other.gameObject.GetComponent<HouseController>().done)
+            {
+                LogicController.countHouses++;
+                LogicController.countHousesByLevel++;
+                other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                other.gameObject.GetComponent<HouseController>().done = true;
+            }
+        }
+
+        if (other.gameObject.CompareTag("ColliderBox"))
+        {
+            direction = -direction;
         }
     }
 }

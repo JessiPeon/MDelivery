@@ -40,7 +40,6 @@ public class StreetScroller : MonoBehaviour
                 LogicController.AddLap();
                 if(LogicController.isAddFinishLine())
                 {
-                    LogicController.currentPercent = 0;
                     Vector2 position = new Vector2(finishLine.transform.position.x, finishLine.transform.position.y);
                     Instantiate(finishLine, position, Quaternion.identity, gameObject.transform);
                 }

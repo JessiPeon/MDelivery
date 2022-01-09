@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class LogicController : MonoBehaviour
 {
+    public static int currentScore = 0;
     public static int countPowerUp = 0;
     public static int countHouses = 0;
+    public static int countHousesByLevel = 0;
     public static bool fail = false;
     public static bool startedGame = false;
     private float time = 8.17f;
-    public static int totalHouses = 40;
+
+    public static int totalHouses = 24;
+    public static int totalHouses1 = 24;
+    public static int totalHouses2 = 39;
+    public static int totalHouses3 = 37;
+    public static int totalHouses4 = 40;
+    public static int totalHouses5 = 38;
+
     public static int laps = 1;
     public static int maxLaps = 7;
     public static int round = 1;
@@ -26,7 +35,7 @@ public class LogicController : MonoBehaviour
     public static int fourthGoal = 70;
     public static int fifthtGoal = 100;
     public static int lastGoal = 100;
-    public static int currentGoal;
+    public static int currentGoal =50;
 
     public static float firstVelocity = 1f;
     public static float secondVelocity = 1.5f;
@@ -50,6 +59,7 @@ public class LogicController : MonoBehaviour
     {
         if (startedGame)
         {
+            currentScore = countPowerUp * 250 + countHouses * 100;
             if (fail)
             {
                 FindObjectOfType<AudioController>().Mute("Instrumental");
@@ -57,7 +67,7 @@ public class LogicController : MonoBehaviour
                 startedGame = false;
                 MenuController.EndGame();
             }
-            var value = ((double)countHouses / totalHouses) * 100;
+            var value = ((double)countHousesByLevel / totalHouses) * 100;
             currentPercent = Convert.ToInt32(Math.Round(value, 0));
             if (currentPercent > 100)
             {
@@ -140,7 +150,10 @@ public class LogicController : MonoBehaviour
         {
             finalLevel = true;
         }
+        LogicController.currentPercent = 0;
+        LogicController.countHousesByLevel = 0;
         SetVelocity();
+        SetTotalHouses();
     }
 
     private static void SetVelocity()
@@ -172,6 +185,42 @@ public class LogicController : MonoBehaviour
                         if (level == 6)
                         {
                         currentVelocity = lastVelocity;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private static void SetTotalHouses()
+    {
+        if (level == 2)
+        {
+            totalHouses = totalHouses2;
+        }
+        else
+        {
+            if (level == 3)
+            {
+                totalHouses = totalHouses3;
+            }
+            else
+            {
+                if (level == 4)
+                {
+                    totalHouses = totalHouses4;
+                }
+                else
+                {
+                    if (level == 5)
+                    {
+                        totalHouses = totalHouses5;
+                    }
+                    else
+                    {
+                        if (level == 6)
+                        {
+                            totalHouses = totalHouses5;
                         }
                     }
                 }
